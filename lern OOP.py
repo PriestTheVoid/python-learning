@@ -1,14 +1,13 @@
-class Person:
-    def __init__(self, name, age): #инициализация класса
-        self.Name = name #атрибут класса
-        self.Age = age #атрибут класса
+class Test():
+    def __init__(self, name, age):
+        self.Name = name
+        self.Age = age
 
-tom = Person("Tom", 17) #объект класса
-bob = Person("Bob", 26) #объект класса
+    def output():
+        print("соединение установленно успешно...")
 
-print(tom.Name)
-print(tom.Age)
+great = Test("Great", "unknown")
 
-tom.Work = "Subway"
-
-print(tom.Work)
+print(great.Name)
+print(great.Age)
+Test.output()
