@@ -1,15 +1,23 @@
-def chek(func):
+def deco(func):
     def wraper(*args):
-        name = args[0]
-        age = args[1]
-        if age < 0: age = 1
-        func(name, age)
+        res = func(*args)
+        if res < 0: res = 1
+        return res
     return wraper
-    
-@chek
-def welc_win(name, age):
-    print(f"your name {name}. Age: {age}")
 
+def test(func):
+    def wraper(*args):
+        wrap = func(*args)
+        print("************************")
+        print(wrap)
+        print("************************")
+    return wraper
 
-welc_win("Tom", 28)
-welc_win("Bob", -7)
+@test
+@deco
+
+def multiply(a, b):
+    return a * b
+
+multiply(5,3)
+multiply(5,-3)
