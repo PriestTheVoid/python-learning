@@ -1,13 +1,9 @@
-class Test():
-    def __init__(self, name, age):
-        self.Name = name
-        self.Age = age
+class Test:
+    def __init__(self, name):
+        self.name = name
+        print(f"создан новый объект {self.name}")
 
-    def output():
-        print("соединение установленно успешно...")
+    def __del__(self):
+        print(f"созданный объект {self.name} удалён")
 
-great = Test("Great", "unknown")
-
-print(great.Name)
-print(great.Age)
-Test.output()
+tom = Test("Tom")
